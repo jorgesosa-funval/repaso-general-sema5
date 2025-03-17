@@ -1,0 +1,16 @@
+{
+  "name": "semana5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "css": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.14",
+    "tailwindcss": "^4.0.14"
+  }
+}

@@ -6,9 +6,8 @@
 export function loadCharacters(array, elementHTML) {
     elementHTML.innerHTML = ""
    
-    array.forEach(function (item) {
-        console.log(item);
-        const template = characterTemplate(item.image, item.name, item.status, item.species, item.location);
+    array.forEach(function (item) { 
+        const template = characterTemplate(item.image, item.name, item.status, item.species, item.location.name);
         
         elementHTML.innerHTML += template;
     });

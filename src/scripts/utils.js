@@ -13,7 +13,6 @@ export function loadCharacters(array, elementHTML) {
     });
 }
 
-
 /**
  * @description Template a modo de componente para mostrar los characters en el DOM.
  * @param {String} img 
@@ -45,7 +44,6 @@ export function characterTemplate(img, name, status, species, location) {
     return template;
 }
 
-
 /**
  * @description Cambia el color del boton para remarcar el filtro que se esta aplicando.
  * @param {Node} button 
@@ -54,4 +52,26 @@ export function activeButton(button) {
     const curretActive = document.querySelector('button.bg-green-600');
     curretActive.classList.replace('bg-green-600', 'bg-slate-800');
     button.classList.replace('bg-slate-800', 'bg-green-600')
+}
+
+/**
+ * @description Filtra los personajes basado en la busqueda del usuario.
+ * @param {Node} input 
+ * @param {Array} array 
+ * @param {Node} elmentHTML 
+ * @returns 
+ */
+export function searchCharacter(input, array, elmentHTML) {
+    let text = input.value.toLocaleLowerCase()
+    const filteredCharacters = array.filter(personaje => {
+        let personajeMinusculas = personaje.name.toLocaleLowerCase();
+        return personajeMinusculas.includes(text);
+    })
+
+    if (filteredCharacters.length === 0) {
+        alert("Sin resultados!");
+        return;
+    }
+
+    loadCharacters(filteredCharacters, elmentHTML);
 }

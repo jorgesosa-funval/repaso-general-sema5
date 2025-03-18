@@ -44,3 +44,14 @@ export function characterTemplate(img, name, status, species, location) {
     `;
     return template;
 }
+
+
+/**
+ * @description Cambia el color del boton para remarcar el filtro que se esta aplicando.
+ * @param {Node} button 
+ */
+export function activeButton(button) {
+    const curretActive = document.querySelector('button.bg-green-600');
+    curretActive.classList.replace('bg-green-600', 'bg-slate-800');
+    button.classList.replace('bg-slate-800', 'bg-green-600')
+}
